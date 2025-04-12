@@ -17,7 +17,7 @@ This repository contains the **frontend** code for an AI-powered finance applica
 - **Interactive UI**: The React frontend provides a user-friendly interface for interacting with the app.
 - **Dockerized Deployment**: The app is containerized using Docker for easy deployment and scaling.
 
-> 🛑 **Disclaimer**: The backend code (FastAPI and Zilliz Vector DB integration) has been moved to a private repository for security and architectural reasons. This public repository only contains the frontend code and Docker configuration relevant to the UI.
+> 🛑 **Disclaimer**: The backend code (FastAPI and Zilliz Vector DB integration) has been moved to a private repository for security and architectural reasons. This public repository only contains the frontend code and code relevant to the UI.
 
 ## 📁 Project Structure
 
