@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter,Route, Routes } from 'react-router-dom'
 import { Index } from "./pages/Index"
-import { Chat } from './pages/Chat'
+import Chat from './pages/Chat'
 
 function App() {
 
