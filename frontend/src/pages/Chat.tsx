@@ -115,14 +115,12 @@ export default function Chat() {
                         onKeyDown={handleKeyDown}
                         placeholder="Ask anything"
                         rows={1}
-                        className="w-full resize-none p-2 rounded-md focus:outline-none"
-                    />
+                        className="w-full resize-none p-2 rounded-md focus:outline-none"/>
                     <div 
                         onClick={message.trim() ? handleSendMessage : undefined}
                         className={`flex items-center self-end justify-center h-8 w-8 text-white rounded-full mt-2 ${
                             message.trim() ? 'bg-black cursor-pointer' : 'bg-slate-300 cursor-not-allowed'
-                        }`}
-                    >
+                        }`}>
                         <ArrowUp size={16} />
                     </div>
                 </div>
