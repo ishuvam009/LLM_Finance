@@ -19,11 +19,11 @@ export const Index = () => {
             <div className='w-full lg:w-[60%]'>
               <p className='text-3xl md:text-4xl font-bold'>Ask Anything About <br /> Any Financial Document's</p>
               <p className='text-lg md:text-xl py-6 font-semibold text-gray-500'>Uploasd's links: Get intelligent answers instantly.</p>
-              <div className='flex mb-8 gap-x-4'>
+              <div className='flex mb-8 gap-x-4 justify-center md:justify-start'>
                 <p className='content-end font-medium text-gray-500'>Powered By</p>
                 <img src={gemiImg} alt="Google gemini AI" className='h-10 w-25' />
               </div>
-              <div className='flex flex-wrap gap-4'>
+              <div className='flex gap-x-4 justify-center md:justify-start'>
                 <Link to="/">
                   <button className='text-white font-semibold bg-green-500 py-2 px-6 rounded-2xl cursor-pointer'>Try Demo</button>
                 </Link>
@@ -43,7 +43,7 @@ export const Index = () => {
             <h2 className='text-4xl md:text-5xl font-bold text-gray-900'>How It Works</h2>
           </div>
           <div className='container mx-auto px-4 md:px-8'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
+            <div className='flex flex-col items-center gap-y-6 md:flex-row md:justify-between md:gap-x-8'>
               <Card
                 image={linkImg}
                 title='Past Document Link'
@@ -115,8 +115,8 @@ export const Index = () => {
           </div>
         </div>
         {/* //footer */}
-        <div className='mt-20 md:mt-40 bg-slate-700 p-10'>
-          <p className='text-3xl md:text-4xl font-bold text-white flex justify-center'>Ready to unlock your documents?</p>
+        <div className='mt-20 md:mt-40 bg-slate-700 p-10 flex justify-center'>
+          <p className='text-3xl md:text-4xl font-bold text-white'>Ready to unlock your documents?</p>
         </div>
       </div>
     </>
