@@ -12,22 +12,8 @@ export const Index = () => {
   return (
     <>
       {/* //main div */}
-      <div className=''>
-      <div className="relative h-screen bg-white overflow-hidden">
-        {/* Grid background */}
-        <div
-          className="absolute inset-0 bg-repeat opacity-30"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M20 0H0v20' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E\")",
-            maskImage:
-              "linear-gradient(to bottom, black 20%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black 20%, transparent 100%)",
-          }}
-        />
-        {/* //Content here */}
-        <div className='mx-4 md:mx-20 lg:mx-40'>
+      <div className='mx-4 md:mx-20 lg:mx-40'>
+        <div>
           <p className='text-2xl font-semibold p-4'>Aisk</p>
           <div className='flex flex-col lg:flex-row pt-10'>
             <div className='w-full lg:w-[60%]'>
@@ -47,14 +33,13 @@ export const Index = () => {
               </div>
             </div>
             <div className='w-full lg:w-[40%] mt-8 lg:mt-0'>
-              <img className='w-full' src={image1} alt="" />
+              <img className='w-full' src={image1} alt="stock-charts aisk" />
             </div>
           </div>
         </div>
-      </div>
-        
+
         {/* //How it works. */}
-        <div className='mx-4 md:mx-20 lg:mx-40'>
+        <div>
           <div className='flex justify-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-gray-900'>How It Works</h2>
           </div>
@@ -79,7 +64,7 @@ export const Index = () => {
           </div>
         </div>
         {/* //Who its for */}
-        <div className='pt-20 px-4 md:px-0 mx-4 md:mx-20 lg:mx-40'>
+        <div className='pt-20 px-4 md:px-0'>
           <div className='flex justify-center mb-16 '>
             <p className='text-3xl md:text-4xl font-bold'>Who It's For</p>
           </div>
@@ -123,8 +108,8 @@ export const Index = () => {
           </div>
         </div>
         {/* //Security */}
-        <div className='mt-20 flex flex-col md:flex-row gap-8 items-center mx-4 md:mx-20 lg:mx-40'>
-          <img src={lockImg} className='bg-white text-gray-500 h-20 w-20'/>
+        <div className='mt-20 flex flex-col md:flex-row gap-8 items-center'>
+          <img src={lockImg} className='bg-white text-gray-500 h-20 w-20' />
           <div>
             <p className='text-xl md:text-2xl font-semibold text-center md:text-left'>Privacy matters — your information is stored securely and kept confidential.</p>
             <p className='text-lg md:text-xl text-gray-600 text-center md:text-left'>We don't just say it — we build with privacy from the ground up.</p>
