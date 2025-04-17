@@ -80,15 +80,7 @@ export default function Chat() {
         setMessage(e.target.value);
     };
 
-    // const handleFileUpload = (file: File) => {
-    //     // Handle the uploaded PDF file here
-    //     console.log('Uploaded file:', file);
-    //     setMessages([...messages, { 
-    //         text: `Uploaded file: ${file.name}`, 
-    //         sender: 'user' 
-    //     }]);
-    //     setChatStarted(true);
-    // };
+    
 
     const handleLinkAdd = (url: string) => {
         // Handle the added link here
