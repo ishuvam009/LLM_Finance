@@ -159,7 +159,7 @@ export default function Chat() {
             <UploadModal
                 isOpen={isUploadModalOpen}
                 onClose={() => setIsUploadModalOpen(false)}
-                onUpload={handleFileUpload}
+                // onUpload={handleFileUpload}
                 onLink={handleLinkAdd}
             />
         </div>

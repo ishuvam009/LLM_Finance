@@ -1,19 +1,10 @@
 interface UploadModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onUpload: (file: File) => void;
   onLink: (url: string) => void;
 }
 
-export default function UploadModal({ isOpen, onClose, onUpload, onLink }: UploadModalProps) {
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file && file.type === 'application/pdf') {
-      onUpload(file);
-      onClose();
-    }
-  };
-
+export default function UploadModal({ isOpen, onClose, onLink }: UploadModalProps) {
   const handleLinkSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -35,32 +26,12 @@ export default function UploadModal({ isOpen, onClose, onUpload, onLink }: Uploa
         >
           ×
         </button>
-        
-        <h2 className="text-xl font-semibold mb-6">Upload Link</h2>
-        
-        <div className="space-y-4">
-          {/* PDF Upload */}
-          {/* <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
-            <label className="cursor-pointer block">
-              <input
-                type="file"
-                accept=".pdf"
-                onChange={handleFileUpload}
-                className="hidden"
-              />
-              <span className="block mb-2">⬆️</span>
-              <p className="text-sm text-gray-600">Upload PDF</p>
-              <p className="text-xs text-gray-400">Click to browse files</p>
-            </label>
-          </div> */}
 
-          {/* URL Input */}
+        <h2 className="text-xl font-semibold mb-6">Upload Link</h2>
+
+        <div className="space-y-4">
           <div className="border-t pt-4">
             <form onSubmit={handleLinkSubmit}>
-              {/* <div className="flex items-center space-x-2 mb-2">
-                <span className="text-gray-400">🔗</span>
-                <p className="text-sm text-gray-600">Or add via link</p>
-              </div> */}
               <input
                 type="url"
                 name="url"
