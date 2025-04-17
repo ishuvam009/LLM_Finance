@@ -36,11 +36,11 @@ export default function UploadModal({ isOpen, onClose, onUpload, onLink }: Uploa
           ×
         </button>
         
-        <h2 className="text-xl font-semibold mb-6">Upload Document</h2>
+        <h2 className="text-xl font-semibold mb-6">Upload Link</h2>
         
         <div className="space-y-4">
           {/* PDF Upload */}
-          <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+          {/* <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
             <label className="cursor-pointer block">
               <input
                 type="file"
@@ -52,15 +52,15 @@ export default function UploadModal({ isOpen, onClose, onUpload, onLink }: Uploa
               <p className="text-sm text-gray-600">Upload PDF</p>
               <p className="text-xs text-gray-400">Click to browse files</p>
             </label>
-          </div>
+          </div> */}
 
           {/* URL Input */}
           <div className="border-t pt-4">
             <form onSubmit={handleLinkSubmit}>
-              <div className="flex items-center space-x-2 mb-2">
+              {/* <div className="flex items-center space-x-2 mb-2">
                 <span className="text-gray-400">🔗</span>
                 <p className="text-sm text-gray-600">Or add via link</p>
-              </div>
+              </div> */}
               <input
                 type="url"
                 name="url"

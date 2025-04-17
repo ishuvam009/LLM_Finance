@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, KeyboardEvent, ChangeEvent } from "react";
-import { ArrowUp } from 'lucide-react';
+import UploadModal from '../components/UploadModal';
 
 // Define interface for message objects
 interface Message {
@@ -11,6 +11,7 @@ export default function Chat() {
     const [message, setMessage] = useState<string>("");
     const [chatStarted, setChatStarted] = useState<boolean>(false);
     const [messages, setMessages] = useState<Message[]>([]);
+    const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -79,6 +80,26 @@ export default function Chat() {
         setMessage(e.target.value);
     };
 
+    const handleFileUpload = (file: File) => {
+        // Handle the uploaded PDF file here
+        console.log('Uploaded file:', file);
+        setMessages([...messages, { 
+            text: `Uploaded file: ${file.name}`, 
+            sender: 'user' 
+        }]);
+        setChatStarted(true);
+    };
+
+    const handleLinkAdd = (url: string) => {
+        // Handle the added link here
+        console.log('Added link:', url);
+        setMessages([...messages, { 
+            text: `Added link: ${url}`, 
+            sender: 'user' 
+        }]);
+        setChatStarted(true);
+    };
+
     return (
         <div className="h-screen w-full flex flex-col relative">
             {!chatStarted && (
@@ -108,23 +129,39 @@ export default function Chat() {
 
             <div className="absolute bottom-4 w-full px-4">
                 <div className="border border-slate-300 shadow-2xl px-4 py-3 rounded-3xl mx-auto max-w-2xl flex flex-col bg-white">
-                    <textarea
-                        ref={textareaRef}
-                        value={message}
-                        onChange={handleChange}
-                        onKeyDown={handleKeyDown}
-                        placeholder="Ask anything"
-                        rows={1}
-                        className="w-full resize-none p-2 rounded-md focus:outline-none"/>
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => setIsUploadModalOpen(true)}
+                            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                        >
+                            +
+                        </button>
+                        <textarea
+                            ref={textareaRef}
+                            value={message}
+                            onChange={handleChange}
+                            onKeyDown={handleKeyDown}
+                            placeholder="Ask anything"
+                            rows={1}
+                            className="w-full resize-none p-2 rounded-md focus:outline-none"
+                        />
+                    </div>
                     <div 
                         onClick={message.trim() ? handleSendMessage : undefined}
                         className={`flex items-center self-end justify-center h-8 w-8 text-white rounded-full mt-2 ${
                             message.trim() ? 'bg-black cursor-pointer' : 'bg-slate-300 cursor-not-allowed'
                         }`}>
-                        <ArrowUp size={16} />
+                        ↑
                     </div>
                 </div>
             </div>
+
+            <UploadModal
+                isOpen={isUploadModalOpen}
+                onClose={() => setIsUploadModalOpen(false)}
+                onUpload={handleFileUpload}
+                onLink={handleLinkAdd}
+            />
         </div>
     );
 }
