@@ -14,7 +14,7 @@ export const Index = () => {
       {/* //main div */}
       <div className='mx-4 md:mx-20 lg:mx-40'>
         <div>
-          <p className='text-2xl font-semibold p-4'>Aisk</p>
+          <p className='text-2xl font-semibold p-4'>Finsight</p>
           <div className='flex flex-col lg:flex-row pt-10'>
             <div className='w-full lg:w-[60%]'>
               <p className='text-3xl md:text-4xl font-bold'>Ask Anything About <br /> Any Financial Document's</p>
