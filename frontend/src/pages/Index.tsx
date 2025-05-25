@@ -24,10 +24,10 @@ export const Index = () => {
                 <img src={gemiImg} alt="Google gemini AI" className='h-10 w-25' />
               </div>
               <div className='flex justify-center md:justify-start gap-x-4'>
-                <Link to="/">
+                <Link to="/chat">
                   <button className='text-white font-semibold bg-green-500 py-2 px-6 rounded-2xl cursor-pointer'>Try Demo</button>
                 </Link>
-                <Link to="/chat">
+                <Link to="/">
                   <button className='font-semibold py-2 px-6 rounded-2xl border-gray-500 border-2 cursor-pointer'>Sign Up</button>
                 </Link>
               </div>
